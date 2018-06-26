@@ -34,7 +34,6 @@ gem 'pundit'
 gem 'simple_form'
 group :development do
   gem 'better_errors'
-  gem 'foreman'
   gem 'rails_layout'
 end
 group :development, :test do
