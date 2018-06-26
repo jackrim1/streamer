@@ -32,7 +32,12 @@ gem 'jquery-rails'
 gem 'pg', '~> 0.18'
 gem 'pundit'
 gem 'simple_form'
+gem 'bulma-rails'
+gem 'gravatar_image_tag'
+
 group :development do
+  gem 'guard'
+  gem 'guard-livereload', require: false
   gem 'better_errors'
   gem 'rails_layout'
 end
