@@ -3,11 +3,16 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :stream %>
-  </div>
+<div class="field">
+	<div class="control">
+	  <div class="form-inputs">
+	    <%= f.input :stream, label: "Stream something helpful!", input_html: { class: "textarea"}, wrapper: false, label_html: {class: "label"}, placeholder: "Compose a new Stream..." %>
+	  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+	  <div class="form-actions">
+	    <%= f.button :submit, class: "button is-info" %>
+	  </div>
+
+ 	</div> 
+</div>
 <% end %>
