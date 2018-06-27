@@ -4,6 +4,7 @@ class StreamsController < ApplicationController
   # GET /streams
   # GET /streams.json
   def index
+    @stream = Stream.new
     @streams = Stream.all.order("created_at DESC")
   end
 
