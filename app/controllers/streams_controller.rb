@@ -15,7 +15,7 @@ class StreamsController < ApplicationController
 
   # GET /streams/new
   def new
-    @stream = Stream.new
+    @stream = current_user.streams.build
   end
 
   # GET /streams/1/edit
@@ -25,7 +25,7 @@ class StreamsController < ApplicationController
   # POST /streams
   # POST /streams.json
   def create
-    @stream = Stream.new(stream_params)
+    @stream = current_user.streams.build(stream_params)
 
     respond_to do |format|
       if @stream.save
