@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :streams
   namespace :admin do
     resources :users
-    root to: "streams#index"
+    root to: "users#index"
   end
   
   devise_for :users
