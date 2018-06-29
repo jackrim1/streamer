@@ -46,7 +46,9 @@
   left: -9999px;
 }
 
-
+.box:not(:last-child) {
+	margin-bottom: 3px;
+}
 
 
 
