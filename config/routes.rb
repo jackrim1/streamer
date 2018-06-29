@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  root to: 'streams#index'
   resources :streams
   namespace :admin do
     resources :users
-    root to: "users#index"
+    root to: "streams#index"
   end
-  root to: 'visitors#index'
+  
   devise_for :users
   resources :users
 end

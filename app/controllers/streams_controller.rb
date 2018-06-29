@@ -1,6 +1,6 @@
 class StreamsController < ApplicationController
   before_action :set_stream, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index, :show]
   # GET /streams
   # GET /streams.json
   def index
@@ -29,7 +29,7 @@ class StreamsController < ApplicationController
 
     respond_to do |format|
       if @stream.save
-        format.html { redirect_to @stream, notice: 'Stream was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Stream was successfully created.' }
         format.json { render :show, status: :created, location: @stream }
       else
         format.html { render :new }
