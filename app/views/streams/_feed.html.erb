@@ -28,6 +28,8 @@
 					<small><%= stream.user.department%></small></br>
 					<p><%= stream.stream %></p>
 				</div>
+
+				<% if stream.user == current_user %>
 				<nav class="level">
 					<div class="level-left is-mobile">
 						<%= link_to stream, class: "level-item" do %>
@@ -41,6 +43,7 @@
 						<% end %>
 					</div>
 				</nav>
+				<% end %>
 			</div>
 		
 		</article>
