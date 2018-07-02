@@ -25,8 +25,11 @@
 			</div>
 			
 			<div class="media-content">
-				<div class="content">
-					<strong><%= stream.user.name %></strong><small>  @<%= stream.user.username %></small><br />
+				<div class="content"> 
+					<%= link_to stream.user do %>
+					<span><strong><%= stream.user.name %></strong></span>
+					<% end %>
+					<small>  @<%= stream.user.username %></small><br />
 					<small>(<%= stream.user.job_title%> - <%= stream.user.department%>)</small></br>
 					<small><p><%= link_to stream do %>
 					  <div class="no-decoration"><%= stream.stream %></div>
