@@ -11,5 +11,5 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-   has_many :streams
+   has_many :streams, dependent: :destroy
 end
