@@ -34,6 +34,8 @@ gem 'pundit'
 gem 'simple_form'
 gem 'bulma-rails'
 gem 'gravatar_image_tag'
+gem 'carrierwave'
+gem 'mini_magick'
 
 group :development do
   gem 'guard'
@@ -46,3 +48,12 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rubocop'
 end
+
+group :production do
+  gem 'pg', '~> 0.18'
+  gem 'fog'
+end
+
+
+
+
