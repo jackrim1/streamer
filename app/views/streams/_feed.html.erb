@@ -34,6 +34,7 @@
 					<small><p><%= link_to stream do %>
 					  <div class="no-decoration"><%= stream.stream %></div>
 					 </p></small>
+					 <%= image_tag stream.picture.url if stream.picture? %>
 				</div>
 
 				<% if stream.user == current_user %>

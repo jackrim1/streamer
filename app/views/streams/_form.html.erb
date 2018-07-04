@@ -9,7 +9,11 @@
 	  </div>
 
 	  </div>
-	  	<small>Upload Image</small>
 	  	<span class="icon"><i class="fa fa-image is-pulled-left" aria-hidden="true"></i></span>
+	  	<small>Upload Image</small>
+	  	
 	    <%= f.button :submit, class: "button is-info is-pulled-right" %>
+	    <span class="picture">
+	    	<%= f.file_field :picture %>
+	    </span>
 <% end %>
