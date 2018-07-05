@@ -1,8 +1,60 @@
 <section class="section">
   <div class="container">
     <div class="columns">
-    	
-        <%= render 'profile' %>
+	    	
+	 <% @user.streams.each do |stream| %>   	
+	 <div class="column is-one-quarter">
+		<nav class="panel">
+		<p class="panel-heading">Profile</p>
+			<div class="panel-block" style="background-color: white">
+				<article class="media">
+					<div class="media-left">
+						<figure class="image is-64x64">
+							<%= gravatar_image_tag(stream.user.email, size: 64, alt: stream.user.name )%>
+						</figure>
+					</div>
+					<div class="media-content">
+						<div class="content">
+							<p>
+								<strong><%= stream.user.name %></strong>
+								<small>(<%= stream.user.job_title %> - <%= stream.user.department %>)</small>
+							</p>
+							<a class="button is-info">  Follow  </a>
+						</div>
+					</div>
+				</article>
+			</div>
+			<div class="panel-block" style="background-color: white">
+				<div class="level is-mobile">
+					<div class="level-item has-centered-text">
+						<div>
+							<p class="heading">Streams</p>
+							<p class="title is-6"><%= current_user.streams.count %></p>
+						</div>
+					</div>
+					<div class="level-item has-centered-text">
+						<div>
+							<p class="heading">Following</p>
+							<p class="title is-6">123</p>
+						</div>
+					</div>
+					<div class="level-item has-centered-text">
+						<div>
+							<p class="heading">Followers</p>
+							<p class="title is-6">456</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<% end %>
+
+
+
+
+
+
 
         
   
