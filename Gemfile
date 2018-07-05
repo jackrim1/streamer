@@ -36,6 +36,7 @@ gem 'bulma-rails'
 gem 'gravatar_image_tag'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'faker'
 
 group :development do
   gem 'guard'
