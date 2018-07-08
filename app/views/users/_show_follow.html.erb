@@ -6,18 +6,27 @@
 				
 			<div class="column is-half">
 
-				<% if @users.any? %>
-					<% @user.each do |user| %>
-			      
-			        
-			      
-			      
-			    
-				<div class="box">
-					<%= render @user %>
-				</div>
+					<% @user.followers.each do |user| %>
+					<div class="box">
+				<article class="media">
+					<div class="media-left">
+						<figure class="image is-64x64">
+							<%= gravatar_image_tag(user.email, size: 64, alt: user.name )%>
+						</figure>
+					</div>
+					<div class="media-content">
+						<div class="content">
+							<p>
+								<strong><%= user.name %></strong>
+								<small>(<%= user.job_title %> - <%= user.department %>)</small>
+							</p>
+							<%= render 'follow_form' %>
+
+						</div>
+					</div>
+				</article>
 				<% end %>
-				
+				</div>
 
 			</div>
 

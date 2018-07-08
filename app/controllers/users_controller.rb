@@ -31,13 +31,13 @@ class UsersController < ApplicationController
   def following
     @title = "Following"
     @user = User.find(params[:id])
-    render 'show_follow'
+    render 'users/_show_follow'
   end
 
   def followers
     @title = "Followers"
     @user = User.find(params[:id])
-    render 'show_follow'
+    render 'users/_show_follow'
   end
   
 
