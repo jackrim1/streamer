@@ -1,0 +1,34 @@
+<% @user ||= current_user %>
+	<div class="stats">
+				<div class="panel-block" style="background-color: white">
+					<div class="level is-mobile">
+						<div class="level-item has-centered-text">
+							<strong id="stream_count" class="stat">
+								<p class="heading">Streams</p>
+								<p class="title is-6"><%= @user.streams.count %></p>
+							</strong>
+						</div>
+						
+						
+							<div class="level-item has-centered-text">
+								<strong id="following" class="stat">
+									<a href="<%= following_user_path(@user) %>">
+									<p class="heading">Following</p>
+									<p class="title is-6"><%= @user.following.count %></p>
+								</strong>
+									</a>
+							</div>
+
+							<div class="level-item has-centered-text">
+								<strong id="followers" class="stat">
+									<a href="<%= followers_user_path(@user)%>">
+									<p class="heading">Followers</p>
+									<p class="title is-6"><%= @user.followers.count %></p>
+								</strong>
+									</a>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
