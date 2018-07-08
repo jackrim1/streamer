@@ -3,6 +3,23 @@
     	<div class="columns">
 	    	
 	 		<%= render 'side_block' %>
+				
+			<div class="column is-half">
+
+				<% if @users.any? %>
+					<% @user.each do |user| %>
+			      
+			        
+			      
+			      
+			    
+				<div class="box">
+					<%= render @user %>
+				</div>
+				<% end %>
+				
+
+			</div>
 
 		</div>
 	</div>
