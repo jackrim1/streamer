@@ -1,5 +1,5 @@
 
-<% @user.streams.each do |stream| %>   	
+ 	
 	 <div class="column is-one-quarter">
 		<nav class="panel">
 		<p class="panel-heading">Profile</p>
@@ -7,14 +7,14 @@
 				<article class="media">
 					<div class="media-left">
 						<figure class="image is-64x64">
-							<%= gravatar_image_tag(stream.user.email, size: 64, alt: stream.user.name )%>
+							<%= gravatar_image_tag(@user.email, size: 64, alt: @user.name )%>
 						</figure>
 					</div>
 					<div class="media-content">
 						<div class="content">
 							<p>
-								<strong><%= stream.user.name %></strong>
-								<small>(<%= stream.user.job_title %> - <%= stream.user.department %>)</small>
+								<strong><%= @user.name %></strong>
+								<small>(<%= @user.job_title %> - <%= @user.department %>)</small>
 							</p>
 							<%= render 'follow_form' %>
 
@@ -27,4 +27,3 @@
 
 		</nav>
 	</div>
-	<% end %>
