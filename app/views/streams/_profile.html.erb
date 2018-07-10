@@ -18,28 +18,9 @@
 				</div>
 			</article>
 		</div>
-		<div class="panel-block" style="background-color: white">
-			<div class="level is-mobile">
-				<div class="level-item has-centered-text">
-					<div>
-						<p class="heading">Streams</p>
-						<p class="title is-6"><%= current_user.streams.count %></p>
-					</div>
-				</div>
-				<div class="level-item has-centered-text">
-					<div>
-						<p class="heading">Following</p>
-						<p class="title is-6">123</p>
-					</div>
-				</div>
-				<div class="level-item has-centered-text">
-					<div>
-						<p class="heading">Followers</p>
-						<p class="title is-6">456</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		
+
+		<%= render '/users/stats' %>
 	</nav>
 </div>
 
