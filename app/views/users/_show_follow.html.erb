@@ -17,17 +17,20 @@
 					<div class="media-content">
 						<div class="content">
 							<p>
-								<strong><%= user.name %></strong>
+								<strong><%=link_to user do %>
+									<%= user.name %>
+										<% end %>
+									</strong>
 								<small>(<%= user.job_title %> - <%= user.department %>)</small>
 							</p>
-							<%= render 'follow_form' %>
+							
 
 						</div>
 					</div>
 				</article>
-				<% end %>
+				
 				</div>
-
+				<% end %>
 			</div>
 
 		</div>
