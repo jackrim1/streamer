@@ -1,24 +1,16 @@
-<div class="column is-half">
-	<% if user_signed_in? %>
-	<article class="media box">
-		<figure class="media-left">
-			<p class="image is-64x64">
-				<%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name )%>
-			</p>
-		</figure>
-		
-	</article>
-	<% end %>
-	
+<section class="section">
+  	<div class="container">
+    	<div class="columns">
+	    	
+	 		<%= render 'profile' %>
+				
+			<div class="column is-half">
 
-
-	
-
-	<div class="box">
+					<div class="box">
 		<article class="media">
 			<div class="media-left">
 				<figure class="image is-64x64">
-					<%= gravatar_image_tag(stream.user.email, size: 64, alt: stream.user.name )%>
+					<%= gravatar_image_tag(@stream.user.email, size: 64, alt: @stream.user.name )%>
 				</figure>
 			</div>
 			
@@ -27,17 +19,18 @@
 					<%= link_to @stream.user do %>
 					<span><strong><%= @stream.user.name %></strong></span>
 					<% end %>
-					<small>  @<%= @stream.user.username %></small><br />
-					<small>(<%= @stream.user.job_title%> - <%= stream.user.department%>)</small></br>
-					
-					 <small> <div class="no-decoration"><%= @stream.stream %></div>
+					<small>  @<%= @stream.user.username %> - <%= time_ago_in_words(@stream.created_at)%></small><br />
+					<small>(<%= @stream.user.job_title%> - <%= @stream.user.department%>)</small></br>
+					<small><p>
+					  <div class="no-decoration"><%= @stream.stream %></div>
 					 </p></small>
+					 <%= image_tag @stream.picture.url if @stream.picture? %>
 				</div>
 
 				<% if @stream.user == current_user %>
 				<nav class="level">
 					<div class="level-left is-mobile">
-						<%= link_to edit_stream_path(stream), class: "level-item" do %>
+						<%= link_to edit_stream_path(@stream), class: "level-item" do %>
 							<span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
 						<% end %>
 						<%= link_to @stream, method: :delete, data: { confirm: "Are you sure you want to delete this Stream?"} do %>
@@ -48,18 +41,25 @@
 				<% else %>
 				<nav class="level">
 					<div class="level-left is-mobile">
-						<a href="#" class="icon alone">
-						<span aria-hidden="true" data-icon="&#x25cc;"></span>
-						<span class="screen-reader-text">RSS</span></a>
+						<%= link_to like_stream_path(@stream), method: :put do %>
+						<i class= "fa fa-thumbs-o-up"></i>
+						<small><%= @stream.get_upvotes.size %></small>
+						<% end %>
+						<div class="whitespace">TEst</div>
+						<%= link_to dislike_stream_path(@stream), method: :put do %>
+						<i class= "fa fa-thumbs-o-down"></i>
+						<small><%= @stream.get_downvotes.size %></small>
+						<% end %>
 					</div>
 				</nav>
 				<% end %>
-				<% end %>
+				
 			</div>
 			
 		
 		</article>
 		</div>
-	
-
+	</div>
 </div>
+</div>
+</section>
