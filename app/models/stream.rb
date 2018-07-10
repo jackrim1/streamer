@@ -3,6 +3,7 @@ class Stream < ApplicationRecord
 	default_scope -> { order(created_at: :desc) }
 	mount_uploader :picture, PictureUploader
 	validates :user_id, presence: true
+	acts_as_votable
 	#validate :picture_size
 
 	private

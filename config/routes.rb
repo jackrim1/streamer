@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
   root to: 'streams#index'
-  resources :streams
+  
+  resources :streams do
+    member do
+      put "like", to: "streams#upvote"
+      put "dislike", to: "streams#downvote"
+    end
+  end
+  
   namespace :admin do
     resources :users
     root to: "users#index"

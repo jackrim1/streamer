@@ -4,8 +4,6 @@ class StreamsController < ApplicationController
   # GET /streams
   # GET /streams.json
   def index
-    @users = User.all
-
     @stream = Stream.new
     @streams = Stream.all.order("created_at DESC")
   end
@@ -62,6 +60,18 @@ class StreamsController < ApplicationController
       format.html { redirect_to streams_url, notice: 'Stream was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @stream = Stream.find(params[:id])
+    @stream.upvote_by current_user
+    redirect_back(fallback_location: root_path)
+  end
+
+  def downvote
+    @stream = Stream.find(params[:id])
+    @stream.downvote_by current_user
+    redirect_back(fallback_location: root_path)
   end
 
   private

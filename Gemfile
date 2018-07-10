@@ -37,6 +37,7 @@ gem 'gravatar_image_tag'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
+gem 'acts_as_votable'
 
 group :development do
   gem 'guard'
