@@ -21,10 +21,12 @@
 					<% end %>
 					<small>  @<%= @stream.user.username %> - <%= time_ago_in_words(@stream.created_at)%></small><br />
 					<small>(<%= @stream.user.job_title%> - <%= @stream.user.department%>)</small></br>
-					<small><p>
+					<hr>
+					<p>
 					  <div class="no-decoration"><%= @stream.stream %></div>
-					 </p></small>
+					 </p>
 					 <%= image_tag @stream.picture.url if @stream.picture? %>
+					 <hr><small><%= commontator_thread(@stream) %></small>
 				</div>
 
 				<% if @stream.user == current_user %>

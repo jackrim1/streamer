@@ -76,9 +76,23 @@ a:hover {
 	background-color: #4D349C;
 }
 
-.bar:after {
+.bar-below:after {
 	content: " ";
 	display: block;
 	border-bottom: 0.5px solid #DCDCDC;
 }
+
+.bar-above:before {
+	content: " ";
+	display: block;
+	border-bottom: 0.5px solid #DCDCDC;
+}
+
+hr { 
+	margin: 0.1em auto; 
+}
+
+
+
+
 

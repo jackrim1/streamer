@@ -29,13 +29,22 @@
 					<%= link_to stream.user do %>
 					<span><strong><%= stream.user.name %></strong></span>
 					<% end %>
-					<small>  @<%= stream.user.username %> - <%= time_ago_in_words(stream.created_at)%></small><br />
-					<small>(<%= stream.user.job_title%> - <%= stream.user.department%>)</small><div class="bar"></div>
-					<small><p><%= link_to stream do %>
-					  <div class="no-decoration"><%= stream.stream %></div>
-					 </p></small>
+					<small>  @<%= stream.user.username %> - <%= time_ago_in_words(stream.created_at)%></small>
+					<p>
+						<small>(<%= stream.user.job_title%> - <%= stream.user.department%>)</small>
+					<hr>
+					<p><%= link_to stream do %>
+						
+					  <div class="no-decoration">	 
+					  	<%= stream.stream %>
+					  </div>
+					 </p>
+					 
+					
 					 <%= image_tag stream.picture.url if stream.picture? %>
-					 <br /><small><%= commontator_thread(stream) %></small>
+					 
+					
+					 
 				</div>
 
 				<% if stream.user == current_user %>
