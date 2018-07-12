@@ -26,7 +26,7 @@
 					  <div class="no-decoration"><%= @stream.stream %></div>
 					 </p>
 					 <%= image_tag @stream.picture.url if @stream.picture? %>
-					 <hr><small><%= commontator_thread(@stream) %></small>
+					 <small><hr><%= commontator_thread(@stream) %></small>
 				</div>
 
 				<% if @stream.user == current_user %>
