@@ -30,11 +30,12 @@
 					<span><strong><%= stream.user.name %></strong></span>
 					<% end %>
 					<small>  @<%= stream.user.username %> - <%= time_ago_in_words(stream.created_at)%></small><br />
-					<small>(<%= stream.user.job_title%> - <%= stream.user.department%>)</small></br>
+					<small>(<%= stream.user.job_title%> - <%= stream.user.department%>)</small><div class="bar"></div>
 					<small><p><%= link_to stream do %>
 					  <div class="no-decoration"><%= stream.stream %></div>
 					 </p></small>
 					 <%= image_tag stream.picture.url if stream.picture? %>
+					 <br /><small><%= commontator_thread(stream) %></small>
 				</div>
 
 				<% if stream.user == current_user %>

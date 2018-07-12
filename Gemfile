@@ -38,6 +38,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'faker'
 gem 'acts_as_votable'
+gem 'commontator', '~> 5.1.0'
 
 group :development do
   gem 'guard'

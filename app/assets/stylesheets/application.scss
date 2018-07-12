@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require commontator/application
  */
 
 @import "bulma";
@@ -73,5 +74,11 @@ a:hover {
 
 .navbar {
 	background-color: #4D349C;
+}
+
+.bar:after {
+	content: " ";
+	display: block;
+	border-bottom: 0.5px solid #DCDCDC;
 }
 

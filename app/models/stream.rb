@@ -5,6 +5,7 @@ class Stream < ApplicationRecord
 	validates :user_id, presence: true
 	acts_as_votable
 	#validate :picture_size
+	acts_as_commontable dependent: :destroy
 
 	private
 

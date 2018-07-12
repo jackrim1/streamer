@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   enum role: [:user, :vip, :admin]
   after_initialize :set_default_role, :if => :new_record?
+  acts_as_commontator
 
   def set_default_role
     self.role ||= :user
