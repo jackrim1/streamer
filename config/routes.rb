@@ -5,9 +5,12 @@ Rails.application.routes.draw do
     member do
       put "like", to: "streams#upvote"
       put "dislike", to: "streams#downvote"
-    end
+      end
   end
   
+  resources :searches do
+  end
+
   namespace :admin do
     resources :users
     root to: "users#index"
