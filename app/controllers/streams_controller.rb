@@ -87,6 +87,9 @@ class StreamsController < ApplicationController
     @streams = Stream.all.order("created_at DESC")
   end
 
+  def search_page
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_stream
