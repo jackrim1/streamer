@@ -1,11 +1,17 @@
 class StreamsController < ApplicationController
   before_action :set_stream, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_search
+  
   # GET /streams
   # GET /streams.json
   def index
+    
+    @q = Stream.ransack(params[:q])
+    @streams = @q.result(distinct: true)
+    
     @stream = Stream.new
-    @streams = Stream.all.order("created_at DESC")
+    #@streams = Stream.all.order("created_at DESC")
   end
 
   # GET /streams/1
@@ -74,6 +80,16 @@ class StreamsController < ApplicationController
     redirect_back(fallback_location: root_path)
   end
 
+  def search
+    @search = Stream.search(params["q"])
+    @search_result = @search.result
+    @stream = Stream.new
+    @streams = Stream.all.order("created_at DESC")
+  end
+
+  def search_page
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_stream
@@ -84,4 +100,20 @@ class StreamsController < ApplicationController
     def stream_params
       params.require(:stream).permit(:stream, :picture)
     end
+
+
+
+
+
 end
+
+
+
+
+
+
+
+
+
+
+

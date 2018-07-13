@@ -1,4 +1,9 @@
 <div class="column is-half">
+	<!-- <article class="media box">
+		<div class="media-content">
+				<%= render 'search' %>
+		</div> 
+	</article> -->
 	<% if user_signed_in? %>
 	<article class="media box" style="background-color:#EAF5FC">
 		<figure class="media-left">
@@ -6,8 +11,8 @@
 				<%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name )%>
 			</p>
 		</figure>
-		<div class="media-content">
-			<%= render 'form' %>
+			<div class="media-content">
+				<%= render 'form' %>
 		</div>
 	</article>
 	<% end %>
