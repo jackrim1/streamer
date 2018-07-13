@@ -1,0 +1,11 @@
+<p class="control">
+                <%= search_form_for @q do |f| %>
+                  <div class="field">
+                    <%= f.label :stream_cont, "Search for a Stream" %>
+                    <%= f.search_field :stream_cont %>
+                    <%= f.submit "Search" %></div>
+                  
+                <% end %>
+              </p>
+
+              
