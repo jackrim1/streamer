@@ -47,14 +47,21 @@
 						<i class= "fa fa-thumbs-o-up"></i>
 						<small><%= @stream.get_upvotes.size %></small>
 						<% end %>
-						<div class="whitespace">TEst</div>
+						<div class="whitespace">---</div>
 						<%= link_to dislike_stream_path(@stream), method: :put do %>
 						<i class= "fa fa-thumbs-o-down"></i>
 						<small><%= @stream.get_downvotes.size %></small>
 						<% end %>
+						<div class="whitespace">---</div>
+						<i class="fa fa-eye"></i>
+						<div class="whitespace">---</div>
+						<i class="fa fa-bar-chart"></i>
 					</div>
 				</nav>
 				<% end %>
+				
+					
+				
 				
 			</div>
 			
