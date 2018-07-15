@@ -7,11 +7,11 @@ class StreamsController < ApplicationController
   # GET /streams.json
   def index
     
-    @q = Stream.ransack(params[:q])
-    @streams = @q.result(distinct: true)
+    #@q = Stream.ransack(params[:q])
+    #@streams = @q.result(distinct: true)
     
     @stream = Stream.new
-    #@streams = Stream.all.order("created_at DESC")
+    @streams = Stream.all.order("created_at DESC")
   end
 
   # GET /streams/1

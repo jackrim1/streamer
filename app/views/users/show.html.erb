@@ -23,7 +23,7 @@
 					<%= link_to stream.user do %>
 					<span><strong><%= stream.user.name %></strong></span>
 					<% end %>
-					<small>  @<%= stream.user.username %></small><br />
+					<small>  @<%= stream.user.username %> - <%= time_ago_in_words(stream.created_at) %></small><br />
 					<small>(<%= stream.user.job_title%> - <%= stream.user.department%>)</small></br>
 					<small><p><%= link_to stream do %>
 					  <div class="no-decoration"><%= stream.stream %></div>
@@ -44,9 +44,15 @@
 				<% else %>
 				<nav class="level">
 					<div class="level-left is-mobile">
-						<a href="#" class="icon alone">
-						<span aria-hidden="true" data-icon="&#x25cc;"></span>
-						<span class="screen-reader-text">RSS</span></a>
+						<%= link_to like_stream_path(stream), method: :put do %>
+						<i class= "fa fa-thumbs-o-up"></i>
+						<small><%= stream.get_upvotes.size %></small>
+						<% end %>
+						<div class="whitespace">TEst</div>
+						<%= link_to dislike_stream_path(stream), method: :put do %>
+						<i class= "fa fa-thumbs-o-down"></i>
+						<small><%= stream.get_downvotes.size %></small>
+						<% end %>
 					</div>
 				</nav>
 				<% end %>

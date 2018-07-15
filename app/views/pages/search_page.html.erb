@@ -2,8 +2,12 @@
   	<div class="container">
     	<div class="columns">		
 			<div class="column is-half">
-				<%= render '/streams/search' %>
+				<article class="media-box">
+					<%= render '/streams/search' %>
+				</article>
 			</div>
 		</div>
 	</div>
 </section>
+
+	<%= sort_link(@q, :stream) %>

@@ -1,6 +1,5 @@
-class SearchController < ApplicationController\
-	
-  before_action :authenticate_user!, except: [:index, :show]
+class PagesController < ApplicationController
+	before_action :authenticate_user!, except: [:index, :show]
   before_action :set_search
 	
 	def index
@@ -19,5 +18,4 @@ class SearchController < ApplicationController\
     def stream_params
       params.require(:stream).permit(:stream, :picture)
     end
-
 end
