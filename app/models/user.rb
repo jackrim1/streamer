@@ -22,6 +22,8 @@ class User < ApplicationRecord
    has_many :following, through: :active_relationships, source: :followed
    has_many :followers, through: :passive_relationships, source: :follower
 
+   has_many :reddits
+
   def follow(other_user)
     following << other_user
   end
@@ -33,6 +35,10 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
+
+  #def reddits?(stream)
+  #  stream.reddits.where(user_id: id).any?
+  #end
 
   private
 

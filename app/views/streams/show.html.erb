@@ -53,7 +53,12 @@
 						<small><%= @stream.get_downvotes.size %></small>
 						<% end %>
 						<div class="whitespace">---</div>
-						<i class="fa fa-eye"></i>
+						<div id="reddits">
+
+							<%= link_to stream_reddit_path(@stream, method: :post do %>
+							<i class="fa fa-eye"></i>
+							<% end %>
+						</div>
 						<div class="whitespace">---</div>
 						<i class="fa fa-bar-chart"></i>
 					</div>

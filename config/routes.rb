@@ -2,12 +2,15 @@ Rails.application.routes.draw do
   root to: 'streams#index'
   
   resources :streams do
+    resource :reddit
     member do
       put "like", to: "streams#upvote"
       put "dislike", to: "streams#downvote"
       end
   end
   
+  
+
   resources :search do
   end
 

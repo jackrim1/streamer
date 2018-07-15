@@ -6,6 +6,7 @@ class Stream < ApplicationRecord
 	acts_as_votable
 	#validate :picture_size
 	acts_as_commontable dependent: :destroy
+	has_many :reddits
 
 	private
 
