@@ -1,7 +1,15 @@
 class RedditsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :set_stream
-	before_action :set_reddit, except: :create
+	before_action :set_reddit, only: [:show]
+
+	def new
+		@reddit = @stream.reddits.build
+	end
+
+	def show
+
+	end
 
 	def create
 		@reddit = @stream.reddits.build(reddit_params)
@@ -18,7 +26,11 @@ class RedditsController < ApplicationController
 	private
 
 	def reddit_params
-		params.require(:reddit).permit(:stream_id, :user_id)
+		params.require(:reddit).permit(:reddit, :stream_id, :user)
+	end
+
+	def set_reddit
+		@reddit = Reddit.find(params[:id])
 	end
 
 	def set_stream

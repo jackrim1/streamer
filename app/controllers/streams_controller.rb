@@ -92,16 +92,16 @@ class StreamsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_stream
-      @stream = Stream.find(params[:id])
-    end
+   
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def stream_params
-      params.require(:stream).permit(:stream, :picture)
+      params.require(:stream).permit(:stream, :picture, :reddit)
     end
 
-
+    def set_stream
+      @stream = Stream.find(params[:id])
+    end
 
 
 
